@@ -1,0 +1,56 @@
+1. Pipeline Efficiency
+Implementation:
+Ensure the CI/CD pipeline is automated, error-free, and modular:
+Use caching for dependencies to improve build times actions/cache in GitHub Actions or equivalent in Jenkins.
+Automate builds, tests, and deployments for backend and frontend using YAML configuration files.
+Use parallel jobs for independent tasks to optimize runtime.
+
+Example Checkpoints:
+Pipelines trigger on every push/PR.
+Error handling implemented in scripts e.g., fallback to previous states if deployment fails.
+Pipeline completion time does not exceed acceptable limits10 minutes for typical builds.
+
+Evaluation Metrics:
+Time to complete the build.
+Success rate of pipeline runs.
+Test coverage percentage in CI.
+
+2. Infrastructure Design
+Implementation:
+Use IaC tools  Terraform for scalable, secure, and maintainable infrastructure
+Modularize Terraform code using reusable modules for VPC, EC2, RDS, etc.
+Implement proper security groups for database and API endpoints (e.g., only whitelisted IPs or private subnets).
+Auto-scale infrastructure to handle dynamic loads.
+
+Example Checkpoints:
+Infrastructure scripts successfully provision environments (development, staging, production) with isolated resources.
+Scripts handle edge cases like resource contention or invalid configurations.
+
+Evaluation Metrics:
+Scalability and load-handling capability.
+Security measures implemented ( encrypted traffic, restricted access.
+Ease of adding/removing resources through scripts.
+
+3. Monitoring Effectiveness
+Implementation:
+Integrate monitoring and logging tools  Prometheus, Grafana, ELK
+Create dashboards for metrics like CPU usage, memory utilization, response time, and error rates.
+Set up alerts for critical issues  downtime, high error rates, disk space utilization.
+
+Example Checkpoints:
+Prometheus collects metrics from Kubernetes pods and applications.
+Grafana dashboards provide actionable insights and trends.
+Centralized logging Fluentd + Elasticsearch + Kibana provides searchable logs for debugging.
+
+Evaluation Metrics:
+Number of critical metrics being monitored.
+Alert responsiveness and resolution time.
+Completeness and clarity of logs in the logging system.
+
+4. Code Quality
+Implementation:
+Structure Terraform, Docker, and pipeline scripts for readability.
+Add comments and documentation for every script to explain its purpose and usage.
+Perform static code analysis using tools like SonarQube to check for vulnerabilities and code smells.
+
+
