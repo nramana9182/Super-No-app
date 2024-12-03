@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: superno-app
+  labels:
+    app: superno
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: superno
+  template:
+    metadata:
+      labels:
+        app: superno
+    spec:
+      containers:
+      - name: backend
+        image: your_dockerhub_username/superno-backend:latest
+        ports:
+        - containerPort: 3000
+      - name: frontend
+        image: your_dockerhub_username/superno-frontend:latest
+        ports:
+        - containerPort: 5173
